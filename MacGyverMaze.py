@@ -79,6 +79,7 @@ def main():
     pygame.display.flip()
     # Initialisation of the maze
     maze = init_maze()
+    maze.display(game_window)
     # Initialisation of the stuff
     init_stuff(maze)
     maze.design_stuff()
