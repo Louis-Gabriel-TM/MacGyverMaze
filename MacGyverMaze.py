@@ -3,12 +3,14 @@
 
 
 """
-The MacGyver Maze, a 2D labyrinth game
-3rd project of OC Python developer path
-Author : Loïc Mangin
+The MacGyver Maze, a 2D labyrinth game.
+3rd project of OC Python Developer Path.
+Author: Loïc Mangin
 """
 
-import pygame.display
+import pygame
+from pygame.locals import *
+
 
 from classes.level import *
 from classes.sprite import *
@@ -17,7 +19,10 @@ from constants import *
 
 
 def end_game(event, window):
-    """  """
+    """Use 'event' value to display a panel showing the
+    result (Victory or Defeat) of the final confrontation.
+    """
+    panel = None
     if event == "Victory !":
         panel = pygame.image.load(victory_img).convert()
     elif event == "Defeat !":
@@ -29,7 +34,9 @@ def end_game(event, window):
 
 
 def init_display(width, height, back_img):
-    """  """
+    """Initialize Pygame.
+    Return the game window with its background image.
+    """
     pygame.init()
     window = pygame.display.set_mode((width, height))
     background = pygame.image.load(back_img).convert()
@@ -38,7 +45,11 @@ def init_display(width, height, back_img):
 
 
 def init_maze(lvl_nb=1, random_lvl=True, design="random"):
-    """  """
+    """Initialize the labyrinth.
+    Return a Level instance based on:
+        - a chosen or (default) randomly selected .txt file;
+        - a chosen or (default) randomly selected graphic design.
+    """
     if random_lvl:
         lvl_nb = randint(1, nb_of_levels)
     lvl_file = "levels/level_" + str(lvl_nb) + ".txt"
@@ -46,7 +57,9 @@ def init_maze(lvl_nb=1, random_lvl=True, design="random"):
 
 
 def init_stuff(lvl):
-    """  """
+    """Define the items (Stuff instances)
+    and randomly spread them in the labyrinth.
+    """
     ether = Stuff("ether")
     needle = Stuff("needle")
     tube = Stuff("tube")
@@ -56,7 +69,10 @@ def init_stuff(lvl):
 
 
 def play_again(window):
-    """  """
+    """Display a 'Play again' panel and wait for an answer.
+    Return 'True' to continue with another game,
+    'False' to close the game.
+    """
     panel = pygame.image.load(play_again_img).convert()
     x_panel = sprite_size * 4.5
     y_panel = sprite_size * 8.5
@@ -64,6 +80,7 @@ def play_again(window):
     pygame.display.flip()
     no_choice = True
     while no_choice:
+        pygame.time.Clock().tick(24)  # Maximum 24 loops by second
         for event in pygame.event.get():
             if event.type == KEYDOWN:
                 if event.key == K_o:
@@ -73,17 +90,18 @@ def play_again(window):
 
 
 def main():
-    """  """
+    """Core code of the MacGyver Maze."""
+
     # Initialisation and displaying of the game window
     game_window = init_display(win_width, win_height, background_img)
     pygame.display.flip()
-    # Initialisation of the maze
+    # Initialisation and displaying of the maze
     maze = init_maze()
     maze.display(game_window)
     # Initialisation of the stuff
     init_stuff(maze)
     maze.design_stuff()
-    # Initialisation of MacGyver and Murdoc
+    # Initialisation of the sprites MacGyver and Murdoc
     macgyver = Sprite("macgyver")
     murdoc = Sprite("murdoc")
     macgyver.put_in(maze)
@@ -95,12 +113,13 @@ def main():
     # Game loop
     playing_game = True
     while playing_game:
+        pygame.time.Clock().tick(24)  # Maximum 24 loops by second
         for event in pygame.event.get():
-            if event.type == QUIT:
+            if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 playing_game = False
             elif event.type == KEYDOWN:
                 confront_result = macgyver.move(maze, event.key)
-                if confront_result != "":
+                if confront_result != "":  # If MacGyver confront to Murdock
                     end_game(confront_result, game_window)
                     playing_game = play_again(game_window)
                     if playing_game:

@@ -2,14 +2,22 @@
 # coding: utf-8
 
 
-"""  """
+"""
+Graphic Constants used in The MacGyver Maze.
+3rd project of OC Python Developer Path.
+Author: Loïc Mangin
+
+Most constants are paths to images files
+"""
 
 # number of files level "level_x.txt"
 nb_of_levels = 3
 
-# sprite size determines window dimensions
+# sprite_size determines the choice of images set used as sprites
+# in the case (not actually used) of several existing images sets.
 sprite_size = 48
 
+# game window dimensions based on sprite_size
 win_width = 22 * sprite_size
 win_height = 17 * sprite_size
 
