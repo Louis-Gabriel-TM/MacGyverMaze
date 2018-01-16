@@ -12,5 +12,5 @@ MacGyver must __*collect 3 items*__ (a needle, a plastic tube and a flask of eth
 
 ## Screenshots
 
-![A level in 'brown stone' design](demo_MGM_1.jpg)
-![A level in 'blue stone' design](demo_MGM_2.jpg)
+![A level in 'brown stone' design](https://github.com/Louis-Gabriel-TM/MacGyverMaze/blob/master/demo_MGM_1.jpg)
+![A level in 'blue stone' design](https://github.com/Louis-Gabriel-TM/MacGyverMaze/blob/master/demo_MGM_2.JPG)
