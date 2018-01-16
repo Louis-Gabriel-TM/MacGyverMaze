@@ -1,7 +1,16 @@
-# MacGyverMaze
+# MacGyver Maze
 
-This repository contains the Python scripts and additional files of my __*3rd project for the Python Developer Path of OpenClassrooms*__.
+This repository contains the Python scripts and additional files of my __3rd project for the *Python Developer Path* in *OpenClassrooms*__.
 
-*The MacGyver Maze* is a __*very simple* 2D labyrinth game__.
+This *Object-oriented programming* project uses the *Pygame* package, observes PEP 8 and PEP 257 conventions and was developped in a virtual environnement (see requirements.txt).
 
-MacGyver must collect 3 items (a needle, a plastic tube and a flask of ether) in the labyrinth to make an anesthetic syringe. With this syringe, he will be able to neutralize is nemesis, Murdoc, who guards the exit. So, MacGyver will escape this maze and be able to continue to new adventures... :-p
+## The game
+
+The *MacGyver Maze* is a *very simple* 2D labyrinth game.
+
+MacGyver must __*collect 3 items*__ (a needle, a plastic tube and a flask of ether) in the labyrinth to make an anesthetic syringe. With this syringe, he will be able __*to neutralize is nemesis, Murdoc*__, who guards the exit. Then, MacGyver will escape this maze and continue to new adventures... :-p
+
+## Screenshots
+
+![A level in 'brown stone' design](demo_MGM_1.jpg)
+![A level in 'blue stone' design](demo_MGM_2.jpg)
