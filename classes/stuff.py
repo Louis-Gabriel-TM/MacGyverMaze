@@ -3,8 +3,9 @@
 
 
 """
-The Stuff Class used in the MacGyver Maze game.
+The Stuff class used in the MacGyver Maze game.
 3rd project of OC Python Developer Path.
+
 Author: Loïc Mangin
 """
 

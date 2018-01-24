@@ -3,8 +3,9 @@
 
 
 """
-The Level Class used in the MacGyver Maze game.
+The Level class used in the MacGyver Maze game.
 3rd project of OC Python Developer Path.
+
 Author: Loïc Mangin
 """
 
@@ -13,7 +14,7 @@ from random import randint
 
 import pygame.display
 
-from constants import *
+from MGM_constants import *
 
 
 class Level:

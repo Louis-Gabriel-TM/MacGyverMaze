@@ -5,6 +5,7 @@
 """
 Graphic Constants used in The MacGyver Maze.
 3rd project of OC Python Developer Path.
+
 Author: Loïc Mangin
 
 Most constants are paths to images files

@@ -3,8 +3,9 @@
 
 
 """
-The Sprite Class used in the MacGyver Maze.
+The Sprite class used in the MacGyver Maze.
 3rd project of OC Python Developer Path.
+
 Author: Loïc Mangin
 """
 
@@ -12,7 +13,7 @@ Author: Loïc Mangin
 import pygame.display
 from pygame.locals import *
 
-from constants import *
+from MGM_constants import *
 
 
 class Sprite:

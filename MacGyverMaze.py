@@ -5,6 +5,7 @@
 """
 The MacGyver Maze, a 2D labyrinth game.
 3rd project of OC Python Developer Path.
+
 Author: Loïc Mangin
 """
 
@@ -15,7 +16,7 @@ from pygame.locals import *
 from classes.level import *
 from classes.sprite import *
 from classes.stuff import *
-from constants import *
+from MGM_constants import *
 
 
 def end_game(event, window):
